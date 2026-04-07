@@ -1,49 +1,48 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * UC1: Initialize Train and Display Consist Summary
+ * Train Consist Management App — Main Entry Point
  *
- * This class serves as the entry point for the Train Consist Management App.
- * It demonstrates the following Core Java concepts:
+ * This application simulates how a railway system manages a train's consist
+ * (a collection of bogies attached to an engine).
  *
- * 1. Class          – Container that holds the program's data and logic.
- * 2. Main Method    – Entry point of a Java application (public static void main).
- * 3. Static Keyword – Allows the JVM to invoke main() without creating an object.
- * 4. ArrayList      – A resizable list from the Collections Framework; unlike
- *                     fixed-size arrays, it grows dynamically at runtime.
- * 5. List Interface – Abstraction over different List implementations (ArrayList,
- *                     LinkedList, etc.), enabling flexible, maintainable code.
- * 6. Console Output – System.out.println() for displaying messages to the user.
- * 7. Dynamic Init   – Creating an empty collection that will be populated later
- *                     as bogies are added during subsequent use cases.
+ * Each use case is implemented in its own file and can be run independently:
+ *
+ *   UC1_InitializeTrain       — Initialize Train and Display Consist Summary
+ *   UC2_AddPassengerBogies    — Add Passenger Bogies to Train (ArrayList Operations)
+ *
+ * To run a specific use case:
+ *   javac -d out src/UC1_InitializeTrain.java
+ *   java -cp out UC1_InitializeTrain
+ *
+ *   javac -d out src/UC2_AddPassengerBogies.java
+ *   java -cp out UC2_AddPassengerBogies
+ *
+ * Or run this file to execute all use cases sequentially:
+ *   javac -d out src/*.java
+ *   java -cp out TrainConsistApp
  */
 public class TrainConsistApp {
 
     public static void main(String[] args) {
 
-        // ----- Step 1: Print Welcome Message -----
-        System.out.println("==============================================");
-        System.out.println("    === Train Consist Management App ===      ");
-        System.out.println("==============================================");
+        System.out.println("##############################################");
+        System.out.println("#   Train Consist Management App — Runner    #");
+        System.out.println("##############################################");
         System.out.println();
 
-        // ----- Step 2: Initialize the Train Consist -----
-        // Using the List interface (abstraction) with ArrayList (implementation).
-        // ArrayList is chosen because:
-        //   - It allows dynamic resizing as bogies are added/removed.
-        //   - It provides fast index-based access O(1) for displaying consist.
-        //   - Unlike a plain array, we don't need to know the size upfront.
-        List<String> consist = new ArrayList<>();
-
-        // ----- Step 3: Display Initial Consist Summary -----
-        System.out.println("--- Train Consist Summary ---");
-        System.out.println("Total Bogies in Consist : " + consist.size());
-        System.out.println("Consist Details         : " + consist);
+        // ----- Run UC1: Initialize Train -----
+        System.out.println(">>> Running UC1: Initialize Train...");
+        System.out.println();
+        UC1_InitializeTrain.main(args);
         System.out.println();
 
-        System.out.println(">> Train consist initialized successfully.");
-        System.out.println(">> Ready for further operations...");
-        System.out.println("==============================================");
+        // ----- Run UC2: Add Passenger Bogies -----
+        System.out.println(">>> Running UC2: Add Passenger Bogies...");
+        System.out.println();
+        UC2_AddPassengerBogies.main(args);
+        System.out.println();
+
+        System.out.println("##############################################");
+        System.out.println("#        All Use Cases Executed Successfully  #");
+        System.out.println("##############################################");
     }
 }
