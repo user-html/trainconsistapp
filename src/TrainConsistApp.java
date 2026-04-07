@@ -9,6 +9,7 @@
  *   UC1_InitializeTrain       — Initialize Train and Display Consist Summary
  *   UC2_AddPassengerBogies    — Add Passenger Bogies to Train (ArrayList Operations)
  *   UC3_TrackUniqueBogieIDs   — Track Unique Bogie IDs (Set – HashSet)
+ *   UC4_MaintainOrderedBogies — Maintain Ordered Bogie IDs (LinkedList)
  *
  * To run a specific use case:
  *   javac -d out src/UC1_InitializeTrain.java
@@ -19,6 +20,9 @@
  *
  *   javac -d out src/UC3_TrackUniqueBogieIDs.java
  *   java -cp out UC3_TrackUniqueBogieIDs
+ *
+ *   javac -d out src/UC4_MaintainOrderedBogies.java
+ *   java -cp out UC4_MaintainOrderedBogies
  *
  * Or run this file to execute all use cases sequentially:
  *   javac -d out src/*.java
@@ -49,6 +53,12 @@ public class TrainConsistApp {
         System.out.println(">>> Running UC3: Track Unique Bogie IDs...");
         System.out.println();
         UC3_TrackUniqueBogieIDs.main(args);
+        System.out.println();
+
+        // ----- Run UC4: Maintain Ordered Bogies -----
+        System.out.println(">>> Running UC4: Maintain Ordered Bogies...");
+        System.out.println();
+        UC4_MaintainOrderedBogies.main(args);
         System.out.println();
 
         System.out.println("##############################################");
